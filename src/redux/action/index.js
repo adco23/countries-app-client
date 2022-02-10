@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { activityURL, countriesNameURL, countriesURL } from './urlConst';
 
 export const GET_ALL_COUNTRIES = "GET_ALL_COUNTRIES";
 export const GET_DETAIL = "GET_DETAIL";
@@ -11,7 +12,7 @@ export const POST_ACTIVITY =  "POST_ACTIVITY";
 export const FILTER_ACTIVITY =  "FILTER_ACTIVITY";
 
 export const getAllCountries = () => dispatch => {
-  return fetch('http://localhost:3001/countries') // fetch devuelve una promesa
+  return fetch(countriesURL) // fetch devuelve una promesa
     .then(res => res.json()) // json() toma response y la lee hasta el final, devolviendo una promesa que se resuelve con el resultado del texto del cuerpo como json
     .then(countries => dispatch({ // Se gestiona la info que proviene de la promesa anterior
       type: GET_ALL_COUNTRIES,
@@ -28,7 +29,7 @@ export const filterContinent = (value) => {
 }
 
 export const getActivities = () => dispatch => {
-  return fetch('http://localhost:3001/activity')
+  return fetch(activityURL)
     .then(res => res.json())
     .then(activities => dispatch({
       type: GET_ACTIVITIES,
@@ -51,7 +52,7 @@ export const populationOrder = (order) => {
 };
 
 export const getNameCountry = (name) => dispatch => {
-  return fetch(`http://localhost:3001/countries?name=${name}`)
+  return fetch(countriesNameURL + name)
     .then(res => res.json())
     .then(countries => dispatch({
       type: GET_NAME_COUNTRY,
@@ -62,7 +63,7 @@ export const getNameCountry = (name) => dispatch => {
 
 export const postActivity = (newActivity) => async dispatch => {
   try {
-    const resp = await axios.post("http://localhost:3001/activity", newActivity);
+    const resp = await axios.post(activityURL, newActivity);
     console.log(resp.data)
   } catch (error) {
     console.log("postActivity: ", error)
@@ -70,7 +71,7 @@ export const postActivity = (newActivity) => async dispatch => {
 };
 
 export const getDetail = (id) => dispatch => {
-  return fetch(`http://localhost:3001/countries/${id}`)
+  return fetch(countriesURL + `/${id}`)
     .then(res => res.json())
     .then(country => dispatch({
       type: GET_DETAIL,
