@@ -1,0 +1,38 @@
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  flex-direction: row;
+}
+
+.nav_home{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  gap: 15px;
+}
+.nav_home:hover {
+  cursor: default;
+}
+
+.LogoImg {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLink {
+  color: black;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.p {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

@@ -1,0 +1,110 @@
+.containerCreate {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.formCreate {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blanchedalmond; */
+}
+
+.labelInput {
+  width: 30rem;
+  padding-top: 1.5rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.labelInput > input[type="text"] {
+  height: 1.5rem;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #CCCCCC;
+}
+
+.labelInput > input[type="text"]:focus {
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #b8cfec;
+  outline: none;
+}
+
+.inputRadio {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  gap: 1rem;
+}
+
+.selectCountries select {
+  width: 100%;
+  height: 1.5rem;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #CCCCCC;
+}
+
+.labelInput ul {
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.labelInput ul li {
+  list-style-type: none;
+}
+
+.labelInput ul div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.labelInput button {
+  background-color: transparent;
+  border: none;
+}
+
+.labelInput button:hover {
+  color: #0066cc
+}
+
+.error_msj {
+  color: red;
+}
+
+.btnSubmit {
+  border: 1px solid #0066cc;
+  border-radius: 5px;
+  background-color: #0099cc;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.btnSubmit:hover {
+  border: 1px solid #0099cc;
+  background-color: #00aacc;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.btnSubmit:disabled,
+.btnSubmit[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
