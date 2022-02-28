@@ -25,7 +25,7 @@ const SearchBar = ({pagination}) => {
     <form className={style.formSrch} onSubmit={e => handleSubmit(e)}>
       <input
         type="text"
-        placeholder='Buscar...'
+        placeholder='Search...'
         value={input}
         className={style.inputSrch}
         onChange={e => handleInputChange(e)}/>
