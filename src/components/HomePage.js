@@ -10,10 +10,12 @@ import {
   populationOrder,
 } from "../redux/action";
 import { Link } from "react-router-dom";
+
 // Componentes ----------------------
 import Card from "./Card";
 import Pagination from "./Pagination";
 import SearchBar from "./SearchBar";
+
 // Styles ---------------------------
 import style from "./HomePage.module.css";
 
@@ -176,7 +178,7 @@ const HomePage = () => {
 
       <div className={style.cards_container}>
         {
-          currentCountries ? currentCountries.map((country) => (
+          currentCountries?.map((country) => (
             <Link
               to={`home/country/${country.id}`}
               key={country.id}
@@ -188,7 +190,7 @@ const HomePage = () => {
                 continent={country.continent}
               />
             </Link>
-          )) : <p>Loading...</p>
+          ))
         }
       </div>
     </div>
