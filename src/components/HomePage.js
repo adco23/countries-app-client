@@ -26,6 +26,7 @@ const HomePage = () => {
   const activities = useSelector((state) => state.activities);
 
   const [, setOrder] = useState("");
+  const continentsName = ["Africa", "Antarctica", "Asia", "Europe", "North America", "Oceania", "South America"]
 
   // Paginado - Inicio -------------------------------
   const [currentPage, setCurrentPage] = useState(1);
@@ -115,16 +116,20 @@ const HomePage = () => {
     <div className={style.HomePage}>
       <div className={style.filters}>
         <p>Filters</p>
+        
         <div className={style.select}>
           <select onChange={(e) => handleFilterContinent(e)}>
             <option value="All">Continents</option>
-            <option value="Africa">Africa</option>
+            {/* <option value="Africa">Africa</option>
             <option value="Antarctica">Antarctica</option>
             <option value="Asia">Asia</option>
             <option value="Europe">Europe</option>
             <option value="North America">North America</option>
             <option value="Oceania">Oceania</option>
-            <option value="South America">South America</option>
+            <option value="South America">South America</option> */}
+            {
+              continentsName.map(cont => <option value={cont} key={cont}>{cont}</option>)
+            }
           </select>
           <div className={style.select_arrow}></div>
         </div>
