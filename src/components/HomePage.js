@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import Card from "./Card";
 import Pagination from "./Pagination";
 import SearchBar from "./SearchBar";
+import Spinner from "./Spinner";
 
 // Styles ---------------------------
 import style from "./HomePage.module.css";
@@ -179,7 +180,7 @@ const HomePage = () => {
       <div className={style.cards_container}>
         {
           countries.length === 0 ?
-          <p>Loading...</p> :
+          <Spinner/> :
           currentCountries?.map((country) => (
             <Link
               to={`home/country/${country.id}`}
