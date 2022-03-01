@@ -82,7 +82,7 @@ const CreateActivity = () => {
   };
 
   const handleSelect = e => {
-    if(e.target.value){
+    if(!input.countries.includes(e.target.value)){
       setInput({
         ...input,
         countries: [...input.countries, e.target.value]
